@@ -19,7 +19,7 @@ register_plugin!(
 );
 
 #[unsafe(no_mangle)]
-pub extern "C" fn make_print(i32: count, &PlgString: message) {
+pub extern "C" fn make_print(count: i32, message: &PlgString) {
     for _ in 0..count {
         println!("{}", message);
     }
