@@ -1,15 +1,19 @@
 use plugify::{register_plugin, PlgString};
+use std::error::Error;
 
-fn on_plugin_start() {
-    println!("ExamplePlugin: on_plugin_start")
+fn on_plugin_start() -> Result<(), Box<dyn Error>> {
+    println!("ExamplePlugin: on_plugin_start");
+    Ok(())
 }
 
-fn on_plugin_update(_dt: f32) {
-    println!("ExamplePlugin: on_plugin_update")
+fn on_plugin_update(_dt: f32) -> Result<(), Box<dyn Error>> {
+    println!("ExamplePlugin: on_plugin_update");
+    Ok(())
 }
 
-fn on_plugin_end() {
-    println!("ExamplePlugin: on_plugin_end")
+fn on_plugin_end() -> Result<(), Box<dyn Error>> {
+    println!("ExamplePlugin: on_plugin_end");
+    Ok(())
 }
 
 register_plugin!(
