@@ -1,4 +1,4 @@
-use plugify::{register_plugin, PlgString};
+use plugify::{register_plugin, Str};
 use std::error::Error;
 
 fn on_plugin_start() -> Result<(), Box<dyn Error>> {
@@ -23,7 +23,7 @@ register_plugin!(
 );
 
 #[unsafe(no_mangle)]
-pub extern "C" fn make_print(count: i32, message: &PlgString) {
+pub extern "C" fn make_print(count: i32, message: &Str) {
     for _ in 0..count {
         println!("{}", message);
     }
